@@ -352,72 +352,97 @@ def wayvia() -> str:
 
 # ------------------------------------------------------------------ quant
 def quant() -> str:
-    W, H, u = 1000, 330, "qt"
-    b = [f'<rect width="{W}" height="{H}" rx="14" fill="{BG}"/>', frame(u, W, H, "~/quant  —  go run ./cmd/quant-backtest", "Go · Python · private")]
+    W, H, u = 492, 372, "qt"
+    b = [f'<rect width="{W}" height="{H}" rx="14" fill="{BG}"/>', frame(u, W, H, "~/quant", "Go · private")]
     b.append(f'<text x="24" y="74" font-family="{MONO}" font-size="24" font-weight="800" fill="url(#{u}-neonh)">quant</text>')
-    b.append(f'<text x="24" y="98" font-family="{MONO}" font-size="12" fill="{MUTED}">OKX 永续合约模块化量化框架 · 策略只产出目标敞口，不碰下单细节</text>')
+    b.append(f'<text x="24" y="98" font-family="{MONO}" font-size="12" fill="{MUTED}">OKX 永续合约量化框架 · 策略只产出目标敞口</text>')
 
     # candles
-    cx0, cy0, cw, ch = 24, 116, 620, 170
+    cx0, cy0, cw, ch = 24, 114, W - 48, 128
     b.append(f'<rect x="{cx0}" y="{cy0}" width="{cw}" height="{ch}" rx="8" fill="#0a0806" stroke="{LINE}"/>')
     for k in range(1, 4):
         yy = cy0 + ch * k / 4
         b.append(f'<line x1="{cx0+8}" y1="{yy}" x2="{cx0+cw-8}" y2="{yy}" stroke="{LINE}" stroke-dasharray="2 4"/>')
     rnd = random.Random(42)
-    n, p = 58, 100.0
+    n, p = 40, 100.0
     data = []
     for i in range(n):
         o = p
-        p = p * (1 + rnd.gauss(0.0025, 0.018) + 0.012 * math.sin(i / 7))
+        p = p * (1 + rnd.gauss(0.003, 0.018) + 0.014 * math.sin(i / 5))
         hi, lo = max(o, p) * (1 + abs(rnd.gauss(0, .006))), min(o, p) * (1 - abs(rnd.gauss(0, .006)))
         data.append((o, hi, lo, p))
     mx, mn = max(d[1] for d in data), min(d[2] for d in data)
-    sy = lambda v: cy0 + 12 + (mx - v) / (mx - mn) * (ch - 24)
-    step = (cw - 30) / n
+    sy = lambda v: cy0 + 26 + (mx - v) / (mx - mn) * (ch - 40)
+    step = (cw - 24) / n
     cand, ema, e = [], [], data[0][3]
     for i, (o, hi, lo, c) in enumerate(data):
-        x = cx0 + 15 + i * step
+        x = cx0 + 12 + i * step
         col = GREEN if c >= o else PINK
-        cand.append(f'<line x1="{x+step*0.35:.1f}" y1="{sy(hi):.1f}" x2="{x+step*0.35:.1f}" y2="{sy(lo):.1f}" stroke="{col}" stroke-width="1"/>'
+        cand.append(f'<line x1="{x+step*0.35:.1f}" y1="{sy(hi):.1f}" x2="{x+step*0.35:.1f}" y2="{sy(lo):.1f}" stroke="{col}"/>'
                     f'<rect x="{x:.1f}" y="{sy(max(o,c)):.1f}" width="{step*0.7:.1f}" height="{max(1, abs(sy(o)-sy(c))):.1f}" fill="{col}" fill-opacity=".85"/>')
-        e = e + (c - e) * 0.18
+        e = e + (c - e) * 0.2
         ema.append(f"{x+step*0.35:.1f},{sy(e):.1f}")
-    # signals
     sig = []
-    for i in (9, 24, 41):
-        x = cx0 + 15 + i * step + step * 0.35
-        sig.append(f'<path d="M{x:.1f},{sy(data[i][2])+14:.1f} l-5,8 h10 z" fill="{CYAN}" filter="url(#{u}-glow)"/>'
-                   f'<text x="{x:.1f}" y="{sy(data[i][2])+34:.1f}" text-anchor="middle" font-family="{MONO}" font-size="9" fill="{CYAN}">BUY</text>')
-    for i in (19, 33, 52):
-        x = cx0 + 15 + i * step + step * 0.35
-        sig.append(f'<path d="M{x:.1f},{sy(data[i][1])-14:.1f} l-5,-8 h10 z" fill="{AMBER}" filter="url(#{u}-glow)"/>'
-                   f'<text x="{x:.1f}" y="{sy(data[i][1])-26:.1f}" text-anchor="middle" font-family="{MONO}" font-size="9" fill="{AMBER}">EXIT</text>')
+    lows = sorted(range(3, n - 3), key=lambda i: data[i][2])[:1] + [6]
+    highs = sorted(range(3, n - 3), key=lambda i: -data[i][1])[:1]
+    for i in lows:
+        x = cx0 + 12 + i * step + step * 0.35
+        sig.append(f'<path d="M{x:.1f},{sy(data[i][2])+8:.1f} l-4,7 h8 z" fill="{CYAN}" filter="url(#{u}-glow)"/>')
+    for i in highs:
+        x = cx0 + 12 + i * step + step * 0.35
+        sig.append(f'<path d="M{x:.1f},{sy(data[i][1])-8:.1f} l-4,-7 h8 z" fill="{AMBER}" filter="url(#{u}-glow)"/>')
     b.append(f'<clipPath id="qt-rev"><rect x="{cx0}" y="{cy0}" height="{ch}" width="0">'
              f'<animate attributeName="width" values="0;{cw};{cw};{cw}" keyTimes="0;.7;.95;1" dur="9s" repeatCount="indefinite"/></rect></clipPath>')
     b.append(f'<g clip-path="url(#qt-rev)">{"".join(cand)}'
-             f'<polyline points="{" ".join(ema)}" fill="none" stroke="{VIOLET}" stroke-width="2" filter="url(#{u}-glow)"/>{"".join(sig)}</g>')
+             f'<polyline points="{" ".join(ema)}" fill="none" stroke="{VIOLET}" stroke-width="1.8" filter="url(#{u}-glow)"/>{"".join(sig)}</g>')
     b.append(f'<line y1="{cy0+6}" y2="{cy0+ch-6}" stroke="{CYAN}" stroke-opacity=".6">'
              f'<animate attributeName="x1" values="{cx0};{cx0+cw};{cx0+cw};{cx0+cw}" keyTimes="0;.7;.95;1" dur="9s" repeatCount="indefinite"/>'
              f'<animate attributeName="x2" values="{cx0};{cx0+cw};{cx0+cw};{cx0+cw}" keyTimes="0;.7;.95;1" dur="9s" repeatCount="indefinite"/></line>')
-    b.append(f'<text x="{cx0+12}" y="{cy0+20}" font-family="{MONO}" font-size="11" fill="{MUTED}">SIMULATED · ZEC-USDT-SWAP · 5m</text>')
+    b.append(f'<text x="{cx0+12}" y="{cy0+18}" font-family="{MONO}" font-size="10.5" fill="{MUTED}">ZEC-USDT-SWAP · 5m · 示意数据</text>')
 
-    # architecture column
-    ax = 668
-    arch = [("strategy", "target exposure", VIOLET), ("portfolio", "sizing · limits", CYAN), ("risk", "whitelist · notional", AMBER),
-            ("execution", "idempotent · recover", PINK), ("venue", "okx demo / live / sim", GREEN)]
-    for i, (lab, sub, col) in enumerate(arch):
-        y = 116 + i * 36
-        b.append(f'<rect x="{ax}" y="{y}" width="{W-ax-24}" height="28" rx="6" fill="#15110c" stroke="{col}" stroke-opacity=".5"/>'
-                 f'<text x="{ax+12}" y="{y+18}" font-family="{MONO}" font-size="12" font-weight="700" fill="{col}">{lab}</text>'
-                 f'<text x="{W-36}" y="{y+18}" text-anchor="end" font-family="{MONO}" font-size="10.5" fill="{MUTED}">{sub}</text>')
-        # flash in sequence
-        b.append(f'<rect x="{ax}" y="{y}" width="{W-ax-24}" height="28" rx="6" fill="{col}" opacity="0">'
-                 f'<animate attributeName="opacity" values="0;.18;0" dur="2.5s" begin="{i*0.5:.1f}s" repeatCount="indefinite"/></rect>')
-    b.append(packets(f"M{ax-10},120 L{ax-10},{116+4*36+24}", CYAN, u, n=3, dur=2.5, r=2.6))
-    b.append(tags(24, H - 16, [("Go", CYAN), ("Python", AMBER), ("SQLite WAL", VIOLET), ("Backtest", GREEN), ("OKX", PINK)]))
-    b.append(f'<text x="{W-24}" y="{H-16}" text-anchor="end" font-family="{MONO}" font-size="10.5" fill="{MUTED}">图表为示意数据，不代表实盘收益</text>')
+    # architecture chain (same visual language as LocalMind)
+    y = 258
+    ns = [("strategy", "exposure", VIOLET), ("portfolio", "sizing", CYAN), ("risk", "limits", AMBER), ("exec", "idempotent", PINK), ("venue", "okx/sim", GREEN)]
+    nw, gap, x0 = 80, 13, 24
+    for i, (lab, sub, col) in enumerate(ns):
+        x = x0 + i * (nw + gap)
+        b.append(node(x, y, nw, 46, lab, sub, col, u))
+        b.append(f'<rect x="{x}" y="{y}" width="{nw}" height="46" rx="9" fill="{col}" opacity="0">'
+                 f'<animate attributeName="opacity" values="0;.16;0" dur="2.5s" begin="{i*0.5:.1f}s" repeatCount="indefinite"/></rect>')
+        if i < len(ns) - 1:
+            b.append(packets(f"M{x+nw},{y+23} L{x+nw+gap},{y+23}", col, u, n=1, dur=0.9, r=2.4, begin=i * 0.3))
+    b.append(tags(24, H - 16, [("Go", CYAN), ("Python", AMBER), ("SQLite WAL", VIOLET), ("OKX", PINK)]))
     b.append(overlay(u, W, H))
     return svg(W, H, "quant", f"<defs>{common_defs(u)}</defs>" + "".join(b))
+
+
+# ------------------------------------------------------------------ contact
+POSTS = ["AI agent（agent 工作流程搭建）", "AI agent（prompt 优化）", "Pytorch 学习之路 (7)", "php 反序列化学习"]
+
+
+def contact() -> str:
+    W, H, u = 492, 372, "ct"
+    b = [f'<rect width="{W}" height="{H}" rx="14" fill="{BG}"/>', frame(u, W, H, "~/.contact", "click to open ↗")]
+    b.append(f'<text x="24" y="74" font-family="{MONO}" font-size="24" font-weight="800" fill="url(#{u}-neonh)">Blog</text>')
+    b.append(f'<text x="24" y="98" font-family="{MONO}" font-size="12" fill="{MUTED}">技术笔记都写在 CSDN · AI Agent / PyTorch / 安全</text>')
+    # big call-to-action
+    bx, by, bw, bh = 24, 116, W - 48, 64
+    b.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="10" fill="{CYAN}" fill-opacity=".1" stroke="{CYAN}" stroke-width="1.5">'
+             f'<animate attributeName="fill-opacity" values=".06;.2;.06" dur="2.4s" repeatCount="indefinite"/></rect>')
+    b.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="10" fill="none" stroke="{CYAN}" stroke-width="5" opacity=".25" filter="url(#{u}-glow)">'
+             f'<animate attributeName="opacity" values=".1;.45;.1" dur="2.4s" repeatCount="indefinite"/></rect>')
+    b.append(f'<text x="{bx+20}" y="{by+28}" font-family="{MONO}" font-size="19" font-weight="800" fill="{CYAN}">CSDN 博客 ↗</text>')
+    b.append(f'<text x="{bx+20}" y="{by+48}" font-family="{MONO}" font-size="11.5" fill="{TEXT}" opacity=".8">blog.csdn.net/2401_85922036</text>')
+    b.append(f'<text x="{bx+bw-20}" y="{by+38}" text-anchor="end" font-family="{MONO}" font-size="26" fill="{CYAN}" filter="url(#{u}-glow)">»</text>')
+    # posts
+    b.append(f'<text x="24" y="210" font-family="{MONO}" font-size="12" fill="{MUTED}"><tspan fill="{GREEN}">$</tspan> ls posts/ --recent</text>')
+    for i, t in enumerate(POSTS):
+        y = 236 + i * 23
+        b.append(f'<g opacity="0"><set attributeName="opacity" to="1" begin="{0.4+i*0.25:.2f}s" fill="freeze"/>'
+                 f'<text x="24" y="{y}" font-family="{MONO}" font-size="12.5" fill="{TEXT}"><tspan fill="{CYAN}">▸ </tspan>{esc(t)}</text></g>')
+    b.append(tags(24, H - 16, [("AI Agent", CYAN), ("PyTorch", AMBER), ("Web 安全", PINK)]))
+    b.append(overlay(u, W, H))
+    return svg(W, H, "CSDN blog", f"<defs>{common_defs(u)}</defs>" + "".join(b))
 
 
 # ------------------------------------------------------------------ htop
@@ -478,7 +503,7 @@ def main() -> None:
     for old in ("wayvia.svg", "localmind.svg", "quant.svg", "hero.svg"):
         (OUT / old).unlink(missing_ok=True)
     files = {"hero.svg": hero(), "localmind.svg": localmind(), "wayvia.svg": wayvia(),
-             "quant.svg": quant(), "langs.svg": htop(), "eof.svg": footer()}
+             "quant.svg": quant(), "contact.svg": contact(), "langs.svg": htop(), "eof.svg": footer()}
     for name, content in files.items():
         (OUT / name).write_text(content, encoding="utf-8")
         print(f"{name:14} {len(content)/1024:6.1f} KB")

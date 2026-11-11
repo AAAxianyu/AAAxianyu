@@ -12,13 +12,8 @@
 </p>
 
 <p align="center">
-  <img src="assets/quant.svg" width="100%" alt="quant (private)" />
-</p>
-
-<p align="center">
-  <a href="https://blog.csdn.net/2401_85922036"><code>blog → CSDN</code></a>
-  &nbsp;&nbsp;
-  <a href="https://github.com/AAAxianyu?tab=repositories"><code>ls ~/repos</code></a>
+  <img src="assets/quant.svg" width="49%" alt="quant (private)" />
+  <a href="https://blog.csdn.net/2401_85922036"><img src="assets/contact.svg" width="49%" alt="CSDN 博客：blog.csdn.net/2401_85922036" /></a>
 </p>
 
 <p align="center">

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="492" height="372" viewBox="0 0 492 372" role="img" aria-label="CSDN blog">
+<defs>
+<linearGradient id="ct-neon" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+  <stop offset="0" stop-color="#ffb347"/><stop offset=".5" stop-color="#ffd59a"/><stop offset="1" stop-color="#ffb347"/>
+  <animateTransform attributeName="gradientTransform" type="rotate" values="0 .5 .5;360 .5 .5" dur="8s" repeatCount="indefinite"/>
+</linearGradient>
+<linearGradient id="ct-neonh" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#ffcf87"/>
+</linearGradient>
+<filter id="ct-glow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="ct-bigglow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="9"/>
+</filter>
+<pattern id="ct-scan" width="4" height="4" patternUnits="userSpaceOnUse">
+  <rect width="4" height="1" fill="#000" opacity=".28"/>
+</pattern>
+<pattern id="ct-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+  <circle cx="1" cy="1" r="1" fill="#c9a46a" opacity=".10"/>
+</pattern>
+<radialGradient id="ct-vig" cx=".5" cy=".5" r=".75">
+  <stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".65"/>
+</radialGradient>
+<linearGradient id="ct-band" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#ffb347" stop-opacity="0"/><stop offset=".5" stop-color="#ffb347" stop-opacity=".07"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+</linearGradient>
+</defs><rect width="492" height="372" rx="14" fill="#0b0907"/>
+<rect x="1" y="1" width="490" height="370" rx="14" fill="#0f0c09"/>
+<rect x="1" y="1" width="490" height="370" rx="14" fill="url(#ct-dots)"/>
+<rect x="1" y="1" width="490" height="370" rx="14" fill="none" stroke="#2b241b" stroke-width="1.5"/>
+<rect x="1" y="1" width="490" height="370" rx="14" fill="none" stroke="url(#ct-neonh)" stroke-width="2"
+      stroke-dasharray="311 1417" filter="url(#ct-glow)">
+  <animate attributeName="stroke-dashoffset" values="0;-1728" dur="7s" repeatCount="indefinite"/>
+</rect>
+<g font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace">
+  <circle cx="22" cy="20" r="4.5" fill="none" stroke="#8c7d66"/><circle cx="38" cy="20" r="4.5" fill="none" stroke="#8c7d66"/><circle cx="54" cy="20" r="4.5" fill="#ffb347"/>
+  <text x="72" y="24" font-size="12" fill="#8c7d66">~/.contact</text>
+  <text x="472" y="24" font-size="12" fill="#8c7d66" text-anchor="end">click to open ↗</text>
+</g>
+<line x1="14" y1="38" x2="478" y2="38" stroke="#2b241b"/>
+<text x="24" y="74" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="24" font-weight="800" fill="url(#ct-neonh)">Blog</text><text x="24" y="98" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12" fill="#8c7d66">技术笔记都写在 CSDN · AI Agent / PyTorch / 安全</text><rect x="24" y="116" width="444" height="64" rx="10" fill="#ffb347" fill-opacity=".1" stroke="#ffb347" stroke-width="1.5"><animate attributeName="fill-opacity" values=".06;.2;.06" dur="2.4s" repeatCount="indefinite"/></rect><rect x="24" y="116" width="444" height="64" rx="10" fill="none" stroke="#ffb347" stroke-width="5" opacity=".25" filter="url(#ct-glow)"><animate attributeName="opacity" values=".1;.45;.1" dur="2.4s" repeatCount="indefinite"/></rect><text x="44" y="144" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="19" font-weight="800" fill="#ffb347">CSDN 博客 ↗</text><text x="44" y="164" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="11.5" fill="#e9dfcb" opacity=".8">blog.csdn.net/2401_85922036</text><text x="448" y="154" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="26" fill="#ffb347" filter="url(#ct-glow)">»</text><text x="24" y="210" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12" fill="#8c7d66"><tspan fill="#a3bd7c">$</tspan> ls posts/ --recent</text><g opacity="0"><set attributeName="opacity" to="1" begin="0.40s" fill="freeze"/><text x="24" y="236" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12.5" fill="#e9dfcb"><tspan fill="#ffb347">▸ </tspan>AI agent（agent 工作流程搭建）</text></g><g opacity="0"><set attributeName="opacity" to="1" begin="0.65s" fill="freeze"/><text x="24" y="259" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12.5" fill="#e9dfcb"><tspan fill="#ffb347">▸ </tspan>AI agent（prompt 优化）</text></g><g opacity="0"><set attributeName="opacity" to="1" begin="0.90s" fill="freeze"/><text x="24" y="282" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12.5" fill="#e9dfcb"><tspan fill="#ffb347">▸ </tspan>Pytorch 学习之路 (7)</text></g><g opacity="0"><set attributeName="opacity" to="1" begin="1.15s" fill="freeze"/><text x="24" y="305" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12.5" fill="#e9dfcb"><tspan fill="#ffb347">▸ </tspan>php 反序列化学习</text></g><rect x="24" y="342" width="71" height="20" rx="10" fill="#ffb347" fill-opacity=".08" stroke="#ffb347" stroke-opacity=".6"/><text x="59" y="356" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="11" fill="#ffb347">AI Agent</text><rect x="102.8" y="342" width="64" height="20" rx="10" fill="#86a7b6" fill-opacity=".08" stroke="#86a7b6" stroke-opacity=".6"/><text x="135" y="356" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="11" fill="#86a7b6">PyTorch</text><rect x="175.0" y="342" width="66" height="20" rx="10" fill="#d9623b" fill-opacity=".08" stroke="#d9623b" stroke-opacity=".6"/><text x="208" y="356" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="11" fill="#d9623b">Web 安全</text>
+<clipPath id="ct-clip"><rect x="1" y="1" width="490" height="370" rx="14"/></clipPath>
+<g clip-path="url(#ct-clip)" pointer-events="none">
+  <rect width="492" height="372" fill="url(#ct-scan)"/>
+  <rect x="0" y="-120" width="492" height="120" fill="url(#ct-band)">
+    <animate attributeName="y" values="-120;372" dur="6s" repeatCount="indefinite"/>
+  </rect>
+</g>
+
+</svg>
