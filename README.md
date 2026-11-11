@@ -1,19 +1,26 @@
 <p align="center">
-  <img src="assets/hero.svg" width="100%" alt="$ whoami → AAAxianyu · 后端 / AI 基础设施 / 量化交易" />
+  <img src="assets/hero.svg" width="100%" alt="AAAxianyu — backend · ai infra · quant" />
 </p>
 
-### `$ ls ~/projects --pinned`
+<p align="center">
+  <img src="assets/langs.svg" width="100%" alt="languages: Go, Python, TypeScript" />
+</p>
 
 <p align="center">
   <a href="https://github.com/AAAxianyu/LocalMind"><img src="assets/localmind.svg" width="49%" alt="LocalMind" /></a>
   <a href="https://github.com/AAAxianyu/Wayvia"><img src="assets/wayvia.svg" width="49%" alt="Wayvia" /></a>
 </p>
+
 <p align="center">
-  <img src="assets/quant.svg" width="49%" alt="quant (private)" />
+  <img src="assets/quant.svg" width="100%" alt="quant (private)" />
 </p>
 
-### `$ cat contact`
+<p align="center">
+  <a href="https://blog.csdn.net/2401_85922036"><code>blog → CSDN</code></a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/AAAxianyu?tab=repositories"><code>ls ~/repos</code></a>
+</p>
 
-`blog` → [CSDN](https://blog.csdn.net/2401_85922036) &nbsp;·&nbsp; `github` → [@AAAxianyu](https://github.com/AAAxianyu)
-
-<sub>assets 由 <code>tools/gen.py</code> 生成，无第三方挂件。</sub>
+<p align="center">
+  <img src="assets/eof.svg" width="100%" alt="EOF" />
+</p>

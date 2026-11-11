@@ -1,20 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="236" viewBox="0 0 400 236" role="img" aria-label="Wayvia">
-<defs></defs>
-<style>
-  text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', 'PingFang SC', 'Microsoft YaHei', monospace; }
-  .cur { animation: blink 1s steps(1) infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
-</style>
-<rect x="0.5" y="0.5" width="399" height="235" rx="10" fill="#0f1218" stroke="#2a303b"/>
-<path d="M0.5 10.5 a10 10 0 0 1 10 -10 h379 a10 10 0 0 1 10 10 v24 h-399 z" fill="#171b23"/>
-<line x1="0.5" y1="34.5" x2="399.5" y2="34.5" stroke="#2a303b"/>
-<circle cx="20" cy="17.5" r="6" fill="#ff5f57"/><circle cx="40" cy="17.5" r="6" fill="#febc2e"/><circle cx="60" cy="17.5" r="6" fill="#28c840"/>
-<text x="200.0" y="22" text-anchor="middle" font-size="12" fill="#7d8796">Wayvia</text>
-<text x="22" y="66" font-size="14" xml:space="preserve"><tspan fill="#7cb8ff">~/Wayvia</tspan><tspan fill="#7d8796"> $ </tspan><tspan fill="#d7dde6">wayvia --help</tspan></text>
-<text x="22" y="96" font-size="13.5" fill="#d7dde6">Wayvia 途序 · 智能分流代理网关</text>
-<text x="22" y="119" font-size="13.5" fill="#d7dde6">国内直连，海外按需走自有出口</text>
-<text x="22" y="142" font-size="13.5" fill="#d7dde6">统一 Mihomo 订阅 · 设备与订阅管理</text>
-<text x="22" y="165" font-size="13.5" fill="#d7dde6">隔离 Docker 链路实验 + 完整验收</text>
-<rect x="22" y="197" width="61.9" height="22" rx="11" fill="none" stroke="#f2b35e" stroke-opacity="0.65"/><text x="53.0" y="212" font-size="12" text-anchor="middle" fill="#f2b35e">Python</text>
-<rect x="91.92" y="197" width="91.2" height="22" rx="11" fill="none" stroke="#7ee0a1" stroke-opacity="0.65"/><text x="137.5" y="212" font-size="12" text-anchor="middle" fill="#7ee0a1">Networking</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="492" height="372" viewBox="0 0 492 372" role="img" aria-label="Wayvia">
+<defs>
+<linearGradient id="wv-neon" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+  <stop offset="0" stop-color="#ffb347"/><stop offset=".5" stop-color="#ffd59a"/><stop offset="1" stop-color="#ffb347"/>
+  <animateTransform attributeName="gradientTransform" type="rotate" values="0 .5 .5;360 .5 .5" dur="8s" repeatCount="indefinite"/>
+</linearGradient>
+<linearGradient id="wv-neonh" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#ffcf87"/>
+</linearGradient>
+<filter id="wv-glow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="3" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="wv-bigglow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="9"/>
+</filter>
+<pattern id="wv-scan" width="4" height="4" patternUnits="userSpaceOnUse">
+  <rect width="4" height="1" fill="#000" opacity=".28"/>
+</pattern>
+<pattern id="wv-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+  <circle cx="1" cy="1" r="1" fill="#c9a46a" opacity=".10"/>
+</pattern>
+<radialGradient id="wv-vig" cx=".5" cy=".5" r=".75">
+  <stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".65"/>
+</radialGradient>
+<linearGradient id="wv-band" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#ffb347" stop-opacity="0"/><stop offset=".5" stop-color="#ffb347" stop-opacity=".07"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+</linearGradient>
+</defs><rect width="492" height="372" rx="14" fill="#0b0907"/>
+<rect x="1" y="1" width="490" height="370" rx="14" fill="#0f0c09"/>
+<rect x="1" y="1" width="490" height="370" rx="14" fill="url(#wv-dots)"/>
+<rect x="1" y="1" width="490" height="370" rx="14" fill="none" stroke="#2b241b" stroke-width="1.5"/>
+<rect x="1" y="1" width="490" height="370" rx="14" fill="none" stroke="url(#wv-neonh)" stroke-width="2"
+      stroke-dasharray="311 1417" filter="url(#wv-glow)">
+  <animate attributeName="stroke-dashoffset" values="0;-1728" dur="7s" repeatCount="indefinite"/>
+</rect>
+<g font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace">
+  <circle cx="22" cy="20" r="4.5" fill="none" stroke="#8c7d66"/><circle cx="38" cy="20" r="4.5" fill="none" stroke="#8c7d66"/><circle cx="54" cy="20" r="4.5" fill="#ffb347"/>
+  <text x="72" y="24" font-size="12" fill="#8c7d66">~/Wayvia</text>
+  <text x="472" y="24" font-size="12" fill="#8c7d66" text-anchor="end">Python</text>
+</g>
+<line x1="14" y1="38" x2="478" y2="38" stroke="#2b241b"/>
+<style>.wvr0{animation:wvk0 8s steps(1) infinite}@keyframes wvk0{0%{opacity:0}0.0%{opacity:1}25.0%{opacity:0}}.wvr1{animation:wvk1 8s steps(1) infinite}@keyframes wvk1{0%{opacity:0}25.0%{opacity:1}50.0%{opacity:0}}.wvr2{animation:wvk2 8s steps(1) infinite}@keyframes wvk2{0%{opacity:0}50.0%{opacity:1}75.0%{opacity:0}}.wvr3{animation:wvk3 8s steps(1) infinite}@keyframes wvk3{0%{opacity:0}75.0%{opacity:1}100.0%{opacity:0}}</style><text x="24" y="74" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="24" font-weight="800" fill="url(#wv-neonh)">Wayvia 途序</text><text x="24" y="98" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12" fill="#8c7d66">智能分流网关 · 国内直连，海外按需走自有出口</text><rect x="24" y="116" width="70" height="28" rx="6" fill="#15110c" stroke="#2b241b"/><text x="59" y="134" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="11" fill="#e9dfcb">phone</text><path d="M94,130 C140,130 140,178 176,178" fill="none" stroke="#ffb347" stroke-opacity=".28" stroke-width="1.5"/><circle r="2.4" fill="#ffb347" filter="url(#wv-glow)"><animateMotion dur="1.8s" begin="0.43s" repeatCount="indefinite" path="M94,130 C140,130 140,178 176,178"/></circle><circle r="2.4" fill="#ffb347" filter="url(#wv-glow)"><animateMotion dur="1.8s" begin="1.33s" repeatCount="indefinite" path="M94,130 C140,130 140,178 176,178"/></circle><rect x="24" y="164" width="70" height="28" rx="6" fill="#15110c" stroke="#2b241b"/><text x="59" y="182" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="11" fill="#e9dfcb">laptop</text><path d="M94,178 C140,178 140,178 176,178" fill="none" stroke="#ffb347" stroke-opacity=".28" stroke-width="1.5"/><circle r="2.4" fill="#ffb347" filter="url(#wv-glow)"><animateMotion dur="1.8s" begin="0.59s" repeatCount="indefinite" path="M94,178 C140,178 140,178 176,178"/></circle><circle r="2.4" fill="#ffb347" filter="url(#wv-glow)"><animateMotion dur="1.8s" begin="1.49s" repeatCount="indefinite" path="M94,178 C140,178 140,178 176,178"/></circle><rect x="24" y="212" width="70" height="28" rx="6" fill="#15110c" stroke="#2b241b"/><text x="59" y="230" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="11" fill="#e9dfcb">router</text><path d="M94,226 C140,226 140,178 176,178" fill="none" stroke="#ffb347" stroke-opacity=".28" stroke-width="1.5"/><circle r="2.4" fill="#ffb347" filter="url(#wv-glow)"><animateMotion dur="1.8s" begin="0.75s" repeatCount="indefinite" path="M94,226 C140,226 140,178 176,178"/></circle><circle r="2.4" fill="#ffb347" filter="url(#wv-glow)"><animateMotion dur="1.8s" begin="1.65s" repeatCount="indefinite" path="M94,226 C140,226 140,178 176,178"/></circle><circle cx="214" cy="178" r="38" fill="#15110c" stroke="url(#wv-neon)" stroke-width="2" filter="url(#wv-glow)"/><circle cx="214" cy="178" r="48" fill="none" stroke="#cbb38a" stroke-opacity=".3" stroke-dasharray="3 6"><animateTransform attributeName="transform" type="rotate" values="0 214 178;360 214 178" dur="12s" repeatCount="indefinite"/></circle><text x="214" y="176" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12" font-weight="700" fill="#e9dfcb">wayvia</text><text x="214" y="191" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="9.5" fill="#8c7d66">policy</text><path d="M252,166 C300,136 330,132 372,132" fill="none" stroke="#a3bd7c" stroke-opacity=".28" stroke-width="1.5"/><circle r="3.2" fill="#a3bd7c" filter="url(#wv-glow)"><animateMotion dur="1.6s" begin="0.00s" repeatCount="indefinite" path="M252,166 C300,136 330,132 372,132"/></circle><circle r="3.2" fill="#a3bd7c" filter="url(#wv-glow)"><animateMotion dur="1.6s" begin="0.53s" repeatCount="indefinite" path="M252,166 C300,136 330,132 372,132"/></circle><circle r="3.2" fill="#a3bd7c" filter="url(#wv-glow)"><animateMotion dur="1.6s" begin="1.07s" repeatCount="indefinite" path="M252,166 C300,136 330,132 372,132"/></circle><path d="M252,190 C300,226 330,232 372,232" fill="none" stroke="#cbb38a" stroke-opacity=".28" stroke-width="1.5"/><circle r="3.2" fill="#cbb38a" filter="url(#wv-glow)"><animateMotion dur="2.4s" begin="0.00s" repeatCount="indefinite" path="M252,190 C300,226 330,232 372,232"/></circle><circle r="3.2" fill="#cbb38a" filter="url(#wv-glow)"><animateMotion dur="2.4s" begin="0.80s" repeatCount="indefinite" path="M252,190 C300,226 330,232 372,232"/></circle><circle r="3.2" fill="#cbb38a" filter="url(#wv-glow)"><animateMotion dur="2.4s" begin="1.60s" repeatCount="indefinite" path="M252,190 C300,226 330,232 372,232"/></circle><g font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace"><rect x="372" y="112" width="96" height="40" rx="9" fill="#15110c" stroke="#a3bd7c" stroke-opacity=".7" /><text x="420.0" y="130.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="#a3bd7c">DIRECT</text><text x="420.0" y="146.0" text-anchor="middle" font-size="10" fill="#8c7d66">cn · lan</text></g><g font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace"><rect x="372" y="212" width="96" height="40" rx="9" fill="#15110c" stroke="#cbb38a" stroke-opacity=".7" /><text x="420.0" y="230.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="#cbb38a">JP exit</text><text x="420.0" y="246.0" text-anchor="middle" font-size="10" fill="#8c7d66">aliyun → ovpn</text></g><rect x="24" y="284" width="444" height="40" rx="8" fill="#0a0806" stroke="#2b241b"/><text class="wvr0" x="36" y="309" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12.5" xml:space="preserve" opacity="0"><tspan fill="#8c7d66">$ wayvia policy explain </tspan><tspan fill="#e9dfcb">baidu.com</tspan><tspan fill="#8c7d66">  →  </tspan><tspan fill="#a3bd7c" font-weight="700">DIRECT</tspan></text><text class="wvr1" x="36" y="309" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12.5" xml:space="preserve" opacity="0"><tspan fill="#8c7d66">$ wayvia policy explain </tspan><tspan fill="#e9dfcb">github.com</tspan><tspan fill="#8c7d66">  →  </tspan><tspan fill="#cbb38a" font-weight="700">PROXY → JP</tspan></text><text class="wvr2" x="36" y="309" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12.5" xml:space="preserve" opacity="0"><tspan fill="#8c7d66">$ wayvia policy explain </tspan><tspan fill="#e9dfcb">192.168.1.1</tspan><tspan fill="#8c7d66">  →  </tspan><tspan fill="#a3bd7c" font-weight="700">LAN</tspan></text><text class="wvr3" x="36" y="309" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="12.5" xml:space="preserve" opacity="0"><tspan fill="#8c7d66">$ wayvia policy explain </tspan><tspan fill="#e9dfcb">claude.ai</tspan><tspan fill="#8c7d66">  →  </tspan><tspan fill="#cbb38a" font-weight="700">PROXY → JP</tspan></text><rect x="24" y="342" width="58" height="20" rx="10" fill="#86a7b6" fill-opacity=".08" stroke="#86a7b6" stroke-opacity=".6"/><text x="53" y="356" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="11" fill="#86a7b6">Python</text><rect x="89.6" y="342" width="84" height="20" rx="10" fill="#a3bd7c" fill-opacity=".08" stroke="#a3bd7c" stroke-opacity=".6"/><text x="132" y="356" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="11" fill="#a3bd7c">Networking</text><rect x="181.6" y="342" width="58" height="20" rx="10" fill="#cbb38a" fill-opacity=".08" stroke="#cbb38a" stroke-opacity=".6"/><text x="210" y="356" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono','PingFang SC','Microsoft YaHei',monospace" font-size="11" fill="#cbb38a">Mihomo</text>
+<clipPath id="wv-clip"><rect x="1" y="1" width="490" height="370" rx="14"/></clipPath>
+<g clip-path="url(#wv-clip)" pointer-events="none">
+  <rect width="492" height="372" fill="url(#wv-scan)"/>
+  <rect x="0" y="-120" width="492" height="120" fill="url(#wv-band)">
+    <animate attributeName="y" values="-120;372" dur="6s" repeatCount="indefinite"/>
+  </rect>
+</g>
+
 </svg>
