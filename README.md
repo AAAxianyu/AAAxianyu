@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/quant.svg?v=2" width="49%" alt="quant (private)" />
+  <img src="assets/quant-card.svg" width="49%" alt="quant (private)" />
   <a href="https://blog.csdn.net/2401_85922036"><img src="assets/contact.svg" width="49%" alt="CSDN 博客：blog.csdn.net/2401_85922036" /></a>
 </p>
 

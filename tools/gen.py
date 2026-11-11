@@ -500,10 +500,10 @@ def footer() -> str:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    for old in ("wayvia.svg", "localmind.svg", "quant.svg", "hero.svg"):
+    for old in ("quant.svg",):
         (OUT / old).unlink(missing_ok=True)
     files = {"hero.svg": hero(), "localmind.svg": localmind(), "wayvia.svg": wayvia(),
-             "quant.svg": quant(), "contact.svg": contact(), "langs.svg": htop(), "eof.svg": footer()}
+             "quant-card.svg": quant(), "contact.svg": contact(), "langs.svg": htop(), "eof.svg": footer()}
     for name, content in files.items():
         (OUT / name).write_text(content, encoding="utf-8")
         print(f"{name:14} {len(content)/1024:6.1f} KB")
