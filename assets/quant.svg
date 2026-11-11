@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="236" viewBox="0 0 400 236" role="img" aria-label="quant">
+<defs></defs>
+<style>
+  text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', 'PingFang SC', 'Microsoft YaHei', monospace; }
+  .cur { animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+</style>
+<rect x="0.5" y="0.5" width="399" height="235" rx="10" fill="#0f1218" stroke="#2a303b"/>
+<path d="M0.5 10.5 a10 10 0 0 1 10 -10 h379 a10 10 0 0 1 10 10 v24 h-399 z" fill="#171b23"/>
+<line x1="0.5" y1="34.5" x2="399.5" y2="34.5" stroke="#2a303b"/>
+<circle cx="20" cy="17.5" r="6" fill="#ff5f57"/><circle cx="40" cy="17.5" r="6" fill="#febc2e"/><circle cx="60" cy="17.5" r="6" fill="#28c840"/>
+<text x="200.0" y="22" text-anchor="middle" font-size="12" fill="#7d8796">quant</text>
+<text x="22" y="66" font-size="14" xml:space="preserve"><tspan fill="#7cb8ff">~/quant</tspan><tspan fill="#7d8796"> $ </tspan><tspan fill="#d7dde6">go run ./cmd/quant-runtime</tspan></text>
+<text x="22" y="96" font-size="13.5" fill="#d7dde6">OKX 永续合约模块化量化框架</text>
+<text x="22" y="119" font-size="13.5" fill="#d7dde6">策略 → 组合规划 → 风控 → 执行</text>
+<text x="22" y="142" font-size="13.5" fill="#d7dde6">回测回放 / 本地撮合 / demo &amp; live</text>
+<text x="22" y="165" font-size="13.5" fill="#d7dde6">SQLite WAL 日志 + 双路径交易审计</text>
+<rect x="22" y="197" width="32.6" height="22" rx="11" fill="none" stroke="#7cb8ff" stroke-opacity="0.65"/><text x="38.3" y="212" font-size="12" text-anchor="middle" fill="#7cb8ff">Go</text>
+<rect x="62.64" y="197" width="61.9" height="22" rx="11" fill="none" stroke="#f2b35e" stroke-opacity="0.65"/><text x="93.6" y="212" font-size="12" text-anchor="middle" fill="#f2b35e">Python</text>
+<rect x="132.56" y="197" width="54.6" height="22" rx="11" fill="none" stroke="#f08bb0" stroke-opacity="0.65"/><text x="159.9" y="212" font-size="12" text-anchor="middle" fill="#f08bb0">Quant</text>
+<text x="378" y="212" font-size="12" text-anchor="end" fill="#7d8796">private</text>
+</svg>
